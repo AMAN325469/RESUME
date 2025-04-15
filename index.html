@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aman Kumar Yadav | Resume</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f2f5;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: #1e1e2f;
+      color: #fff;
+      padding: 50px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      animation: slideDown 1s ease-out;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      color: #ccc;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    nav {
+      background: #2c2c3e;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s;
+    }
+
+    nav a:hover {
+      color: #00bfff;
+      transform: scale(1.1);
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s, transform 1s;
+    }
+
+    section.reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #007bff;
+      border-bottom: 2px solid #007bff;
+      display: inline-block;
+    }
+
+    ul {
+      list-style: disc inside;
+      line-height: 1.8;
+    }
+
+    .btn-download {
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      margin-top: 20px;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .btn-download:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background-color: #1e1e2f;
+      color: #fff;
+    }
+
+    /* Animations */
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Aman Kumar Yadav</h1>
+    <p id="typing-text"></p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>I’m a BCA graduate from Amity University, passionate about full-stack web development. I enjoy building smart, responsive websites and solving problems creatively.</p>
+  </section>
+
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML, CSS, Bootstrap</li>
+      <li>JavaScript, React (learning), PHP</li>
+      <li>Git, GitHub, Copilot</li>
+      <li>MS Excel, Office Tools</li>
+    </ul>
+  </section>
+
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <p><strong>Online Course Management System:</strong> A web app with AI modules to manage user enrollments, admin controls, and dynamic content updates.</p>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Email: aman.professional05@gmail.com</p>
+    <p>Location: Noida, India</p>
+    <a href="Aman_Resume.pdf" class="btn-download" download>Download Resume</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Aman Kumar Yadav. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Typing animation for header
+    const text = "Web Developer | Problem Solver | Lifelong Learner";
+    let index = 0;
+    const typingText = document.getElementById("typing-text");
+
+    function typeEffect() {
+      if (index < text.length) {
+        typingText.innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeEffect, 50);
+      }
+    }
+
+    window.onload = typeEffect;
+
+    // Reveal on scroll
+    const sections = document.querySelectorAll(".section");
+
+    window.addEventListener("scroll", () => {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach((sec) => {
+        const secTop = sec.getBoundingClientRect().top;
+        if (secTop < triggerBottom) {
+          sec.classList.add("reveal");
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
