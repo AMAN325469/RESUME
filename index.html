@@ -354,18 +354,19 @@
     }
     typeLoop();
 
-    window.addEventListener("load", () => {
-  try {
-    music.volume = 0.2;
-    music.play().then(() => {
-      toggleBtn.innerText = "🔇 Pause Music";
-    }).catch(() => {
-      console.log("Auto-play blocked. User needs to click play.");
-    });
-  } catch (e) {
-    console.log("Auto-play failed:", e);
+   const music = document.getElementById("bgMusic");
+const toggleBtn = document.getElementById("musicToggle");
+
+function toggleMusic() {
+  if (music.paused) {
+    music.volume = 0.2; // subtle volume
+    music.play();
+    toggleBtn.innerText = "🔇 Pause Music";
+  } else {
+    music.pause();
+    toggleBtn.innerText = "🔊 Play Music";
   }
-});
+}
 
     // Reveal on scroll
     const reveals = document.querySelectorAll("section, .project-card");
