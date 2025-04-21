@@ -253,7 +253,7 @@
   <audio id="bgMusic" src="bg-music.mp3" loop></audio>
 
 <button id="musicToggle" onclick="toggleMusic()">
-  🔊
+  🔊 music
 </button>
 
   <section id="about" class="animated-section">
@@ -354,20 +354,6 @@
     }
     typeLoop();
 
-   const music = document.getElementById("bgMusic");
-const toggleBtn = document.getElementById("musicToggle");
-
-function toggleMusic() {
-  if (music.paused) {
-    music.volume = 0.2; // subtle volume
-    music.play();
-    toggleBtn.innerText = "🔇 Pause Music";
-  } else {
-    music.pause();
-    toggleBtn.innerText = "🔊 Play Music";
-  }
-}
-
     // Reveal on scroll
     const reveals = document.querySelectorAll("section, .project-card");
 
@@ -388,6 +374,21 @@ function toggleMusic() {
 
     window.addEventListener("scroll", revealScroll);
     window.addEventListener("load", revealScroll);
+
+    const music = document.getElementById("bgMusic");
+const toggleBtn = document.getElementById("musicToggle");
+
+function toggleMusic() {
+  if (music.paused) {
+    music.volume = 0.2; // subtle volume
+    music.play();
+    toggleBtn.innerText = "🔇 Pause Music";
+  } else {
+    music.pause();
+    toggleBtn.innerText = "🔊 Play Music";
+  }
+}
+
   </script>
 </body>
 </html>
