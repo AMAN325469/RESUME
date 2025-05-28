@@ -235,6 +235,26 @@
       background-color: #1c1c1c;
       color: #aaa;
     }
+
+    .ad-container {
+  width: 300px;
+  height: 250px;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  text-align: center;
+  background-color: #f9f9f9;
+  padding: 10px;
+  font-family: sans-serif;
+}
+.ad-container h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.ad-container a {
+  text-decoration: none;
+  color: blue;
+}
+
   </style>
 </head>
 <body>
@@ -314,13 +334,17 @@
       </div>
     </div>
   </section>
-  
+
 
   <section id="contact">
     <h2>Contact</h2>
     <p>Email: aman.professional05@gmail.com</p>
     <a href="Aman_Resume.pdf" class="btn" download>Download Resume</a>
   </section>
+
+  <div class="ad-container" id="ad-box">
+    <!-- Ad content will load here -->
+  </div>
 
   <footer>
     <p>&reg; 2025 Aman Kumar Yadav. All rights reserved.</p>
@@ -390,6 +414,32 @@ function toggleMusic() {
     toggleBtn.innerText = "🔊 Play Music";
   }
 }
+
+    // Dummy ad data (you can fetch from server or insert AdSense code here)
+const adContent = `
+  <h3>Sponsored Ad</h3>
+  <a href="https://example.com" target="_blank">
+    <img src="https://via.placeholder.com/300x200?text=Your+Ad+Here" alt="Ad" />
+    <p>Click here for amazing deals!</p>
+  </a>
+`;
+
+document.getElementById('ad-box').innerHTML = adContent;
+
+
+
+    <!-- Google AdSense Code -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-XXXXXXXXXX"
+     data-ad-slot="YYYYYYYYYY"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 
   </script>
 </body>
